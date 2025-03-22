@@ -1,0 +1,49 @@
+.header {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.img-header {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.search-match {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.search-game {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.search-text {
+    display: flex;
+    align-items: center;
+}
+
+.search-text label {
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-text input {
+    width: 200px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
