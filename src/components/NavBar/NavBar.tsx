@@ -4,9 +4,6 @@ import "./NavBar.css";
 export function NavBar() {
   return (
     <nav className="nav-head">
-      <div>
-       
-      </div>
       <ul className="nav-item">
         <li className="nav-li">
           <Link to='/' className="nlink">Inicio</Link>
