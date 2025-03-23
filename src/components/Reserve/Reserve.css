@@ -1,0 +1,59 @@
+.reserve-main {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 20px;
+    background-color: #00796B;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.selected-complex {
+    margin-bottom: 20px;
+}
+
+.selected-complex h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.selected-complex p {
+    font-size: 1.2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+th {
+    background-color: #004D40;
+    color: white;
+}
+
+td {
+    background-color: #009688;
+}
+
+td:hover {
+    background-color: #00695C;
+}
+
+.selected {
+    background-color: #FFC107;
+    color: black;
+}
+
+.selected-info {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
