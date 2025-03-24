@@ -1,12 +1,13 @@
 .reserve-main {
     width: 80%;
     margin: 0 auto;
-    margin-top: 5rem;
+    margin-top: 2rem;
     padding: 20px;
     background-color: #00796B;
     border-radius: 5px;
     color: white;
     text-align: center;
+    margin-bottom: 5rem;
 }
 
 .selected-complex {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";  // Importa Link
 import axios from "axios";
 import "./Complexes.css";
-import imgDft from '../../img/img-complex.jpg'
+import imgDft from '../../img/img-complex.jpg';
 
 export function Complexes() {
   const location = useLocation();
@@ -30,7 +30,12 @@ export function Complexes() {
     <section className="container">
       {complexes.length > 0 ? (
         complexes.map((complex) => (
-          <div key={complex.idftb} className="complex-card">
+          <Link
+            key={complex.idftb}
+            to="/reserve"
+            state={{ complex }}
+            className="complex-card" 
+          >
             <div className="img-complex">
               <img src={complex.image || imgDft} alt={complex.name} />
               <p className="price">${complex.price || '30.000'}</p>
@@ -39,7 +44,7 @@ export function Complexes() {
               <h1 className="complex-name">{complex.name}</h1>
               <p>{complex.address}</p>
             </div>
-          </div>
+          </Link>
         ))
       ) : (
         <p className="not-found">No se encontraron complejos disponibles.</p>

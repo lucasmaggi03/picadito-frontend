@@ -4,27 +4,13 @@ import "./Reserve.css";
 
 export function Reserve() {
   const location = useLocation();
-  const { complex } = location.state || {};
+  const { complex } = location.state || {};  // Accede a los datos del complejo
 
   const days = [
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
+    "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"
   ];
   const times = [
-    "C1. F5",
-    "C2. F6",
-    "C3. F7",
-    "C4. F11",
+    "C1. F5", "C2. F6", "C3. F7", "C4. F11"
   ];
 
   const [selectedCell, setSelectedCell] = useState<{
@@ -43,7 +29,7 @@ export function Reserve() {
         <div className="selected-complex">
           <h2>{complex.name}</h2>
           <p>{complex.address}</p>
-          <p>Día 23/03</p>
+          <p>${complex.price}</p>
         </div>
       )}
       <table>
