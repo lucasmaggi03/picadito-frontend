@@ -43,9 +43,9 @@ export function Reserve() {
         <div className="selected-complex">
           <h2>{complex.name}</h2>
           <p>{complex.address}</p>
+          <p>Día 23/03</p>
         </div>
       )}
-
       <table>
         <thead>
           <tr>

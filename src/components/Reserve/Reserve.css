@@ -10,16 +10,18 @@
 }
 
 .selected-complex {
-    margin-bottom: 20px;
+    display: flex;
+    text-align: start;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.selected-complex h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.selected-complex h2 {
+    font-size: 2rem;
 }
 
 .selected-complex p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 table {
