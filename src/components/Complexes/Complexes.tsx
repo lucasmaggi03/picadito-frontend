@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";  // Importa Link
+import { useLocation, Link } from "react-router-dom"; 
 import axios from "axios";
 import "./Complexes.css";
 import imgDft from '../../img/img-complex.jpg';
@@ -8,7 +8,7 @@ export function Complexes() {
   const location = useLocation();
   const { selectedLocation, sport, date, time } = location.state || {};
   const [complexes, setComplexes] = useState<
-    { idftb: number; name: string; address: string; price: number; image: string }[]
+    { idftb: number; name: string; address: string; price: number; imgUrl: string }[]
   >([]);
 
   useEffect(() => {
@@ -34,10 +34,13 @@ export function Complexes() {
             key={complex.idftb}
             to="/reserve"
             state={{ complex }}
-            className="complex-card" 
+            className="complex-card"
           >
             <div className="img-complex">
-              <img src={complex.image || imgDft} alt={complex.name} />
+              <img
+                src={complex.imgUrl || imgDft}
+                alt={complex.name}
+              />
               <p className="price">${complex.price || '30.000'}</p>
             </div>
             <div className="complex-info">
