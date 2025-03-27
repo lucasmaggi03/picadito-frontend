@@ -4,12 +4,20 @@ import axios from "axios";
 import "./Complexes.css";
 import imgDft from '../../img/img-complex.jpg';
 
+interface Complex {
+  idftb: number;
+  name: string;
+  address: string;
+  price: number;
+  imgUrl: string;
+  latitude: number; // Ahora incluye latitud
+  longitude: number; // Ahora incluye longitud
+}
+
 export function Complexes() {
   const location = useLocation();
   const { selectedLocation, sport, date, time } = location.state || {};
-  const [complexes, setComplexes] = useState<
-    { idftb: number; name: string; address: string; price: number; imgUrl: string }[]
-  >([]);
+  const [complexes, setComplexes] = useState<Complex[]>([]);
 
   useEffect(() => {
     const fetchComplexes = async () => {
@@ -17,7 +25,7 @@ export function Complexes() {
         const response = await axios.get(
           `http://localhost:5000/complexes?location=${selectedLocation}`
         );
-        setComplexes(response.data);
+        setComplexes(response.data); // Asegúrate de que la API devuelve latitude y longitude
       } catch (error) {
         console.error("Error obteniendo los complejos:", error);
       }
@@ -33,7 +41,7 @@ export function Complexes() {
           <Link
             key={complex.idftb}
             to="/reserve"
-            state={{ complex }}
+            state={{ complex }} // Enviamos toda la información del complejo
             className="complex-card"
           >
             <div className="img-complex">

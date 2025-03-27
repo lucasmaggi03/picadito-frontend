@@ -1,28 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import "./Reserve.css";
+
+interface Complex {
+  idftb: number;
+  name: string;
+  address: string;
+  price: number;
+  imgUrl: string;
+  latitude: number;
+  longitude: number;
+}
 
 export function Reserve() {
   const location = useLocation();
-  const { complex } = location.state || {};  // Accede a los datos del complejo
+  const { complex } = location.state as { complex: Complex } || {}; // Aseguramos el tipo de complex
 
-  const days = [
-    "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"
-  ];
-  const times = [
-    "C1. F5", "C2. F6", "C3. F7", "C4. F11"
-  ];
+  const days = ["13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"];
+  const times = ["C1. F5", "C2. F6", "C3. F7", "C4. F11"];
 
-  const [selectedCell, setSelectedCell] = useState<{
-    day: string;
-    time: string;
-  } | null>(null);
+  const [selectedCell, setSelectedCell] = useState<{ day: string; time: string } | null>(null);
 
   const handleCellClick = (day: string, time: string) => {
     setSelectedCell({ day, time });
     console.log(`Día seleccionado: ${day}, Horario seleccionado: ${time}`);
   };
 
+  // Cargar Google Maps
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY, // Agrega tu API Key en el .env
+  });
+  console.log(complex.latitude, complex.longitude);
   return (
     <div className="reserve-main">
       {complex && (
@@ -49,11 +58,7 @@ export function Reserve() {
                 <td
                   key={`${day}-${time}`}
                   onClick={() => handleCellClick(day, time)}
-                  className={
-                    selectedCell?.day === day && selectedCell?.time === time
-                      ? "selected"
-                      : ""
-                  }
+                  className={selectedCell?.day === day && selectedCell?.time === time ? "selected" : ""}
                 ></td>
               ))}
             </tr>
@@ -69,6 +74,20 @@ export function Reserve() {
           </p>
         </div>
       )}
+      <div className="location">
+        <h2>Ubicación</h2>
+        {isLoaded && complex?.latitude && complex?.longitude ? (
+          <GoogleMap
+            mapContainerStyle={{ width: "100%", height: "400px" }}
+            zoom={15}
+            center={{ lat: complex.latitude, lng: complex.longitude }}
+          >
+            <Marker position={{ lat: complex.latitude, lng: complex.longitude }} />
+          </GoogleMap>
+        ) : (
+          <p>Cargando mapa...</p>
+        )}
+      </div>
     </div>
   );
 }
