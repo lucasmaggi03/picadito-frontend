@@ -2,24 +2,27 @@
   box-sizing: inherit;
 }
 
+
+
 html, body {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-  font-family: 'Onest Variable', system-ui, sans-serif;
+  font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 html body {
-  padding: 0;
-  margin: 0;
   overflow-y: inherit;
 }
 
 :root{
   --bg-color: #004D40;
+  --accent: #95204A;
+  --primary: #5C022D;
+  --secondary: #860636;
+  --white: #F3F4FC;
+  --lightgray: #B3B3B3;
+  --black: #03040A;
 }
