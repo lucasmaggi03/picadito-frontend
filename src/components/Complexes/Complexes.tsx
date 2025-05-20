@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import "./Complexes.css";
 import imgDft from "../../img/img-complex.jpg";
+import type { Complex } from '../../types/index'
 import {
   FaStar,
   FaMapMarkerAlt,
@@ -11,15 +12,6 @@ import {
   FaFireAlt,
 } from "react-icons/fa";
 
-interface Complex {
-  idftb: number;
-  name: string;
-  address: string;
-  price: number;
-  imgUrl: string;
-  latitude: number;
-  longitude: number;
-}
 
 export function Complexes() {
   const location = useLocation();
@@ -60,30 +52,41 @@ export function Complexes() {
                   </p>
                 </div>
                 <p className="description">
-                  Disfruta de partidos increíbles en nuestro predio con canchas
-                  de F5 y F7. Contamos con parrilleros para que celebres después
-                  del juego y baños para tu comodidad.
+                  {complex.description}
                 </p>
                 <div className="icons">
-                  <span>
-                    <FaStar /> 4.7
-                  </span>
-                  <span>
-                    <FaFutbol /> F5
-                  </span>
-                  <span>
-                    <FaFutbol /> F7
-                  </span>
-                  <span>
-                    <FaFutbol /> F11
-                  </span>
-                  <span>
-                    <FaFireAlt />
-                  </span>
-                  <span>
-                    <FaShower />
-                  </span>
+                  {complex.rating && (
+                    <span>
+                      <FaStar /> {complex.rating}
+                    </span>
+                  )}
+                  {complex.hasF5 && (
+                    <span>
+                      <FaFutbol /> F5
+                    </span>
+                  )}
+                  {complex.hasF7 && (
+                    <span>
+                      <FaFutbol /> F7
+                    </span>
+                  )}
+                  {complex.hasF11 && (
+                    <span>
+                      <FaFutbol /> F11
+                    </span>
+                  )}
+                  {complex.hasGrill && (
+                    <span>
+                      <FaFireAlt />
+                    </span>
+                  )}
+                  {complex.shower && (
+                    <span>
+                      <FaShower />
+                    </span>
+                  )}
                 </div>
+
                 <div className="bottom-row">
                   <button className="reserve-btn">Reservar ahora</button>
                   <span className="price-label">

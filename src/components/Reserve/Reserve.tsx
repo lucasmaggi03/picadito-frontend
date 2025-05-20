@@ -1,21 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import "./Reserve.css";
-
-interface Complex {
-  idftb: number;
-  name: string;
-  address: string;
-  price: number;
-  imgUrl: string;
-  latitude: number;
-  longitude: number;
-}
+import type { Complex } from '../../types/index'
 
 export function Reserve() {
+
+  //GOOGLE MAPS
   const location = useLocation();
-  const { complex } = location.state as { complex: Complex } || {}; // Aseguramos el tipo de complex
+  const { complex } = location.state as { complex: Complex } || {}; 
 
   const days = ["13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"];
   const times = ["C1. F5", "C2. F6", "C3. F7", "C4. F11"];
@@ -27,9 +20,9 @@ export function Reserve() {
     console.log(`Día seleccionado: ${day}, Horario seleccionado: ${time}`);
   };
 
-  // Cargar Google Maps
+  
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY, // Agrega tu API Key en el .env
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY, 
   });
   console.log(complex.latitude, complex.longitude);
   return (
