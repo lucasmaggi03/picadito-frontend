@@ -2,19 +2,18 @@
   box-sizing: inherit;
 }
 
-
-
 html, body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
   overflow-x: hidden;
-  background-color: var(--black);
+  background-color: var(--white);
   color: var(--white);
-}
-
-html body {
   overflow-y: inherit;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
 }
 
 :root{

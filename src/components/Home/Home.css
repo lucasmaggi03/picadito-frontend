@@ -2,7 +2,7 @@
 .welcome{
     position:relative;
     background-color: var(--primary) ;
-
+    overflow: hidden;
 }
 
 .header2222{

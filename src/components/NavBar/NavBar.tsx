@@ -4,22 +4,15 @@ import "./NavBar.css";
 export function NavBar() {
   return (
     <nav className="nav-head">
-      <ul className="nav-item">
-        <li className="nav-li">
-          <Link to="/" className="nlink">
-            Inicio
-          </Link>
-        </li>
-        <li className="nav-li">
-          <Link to="/reservar" className="nlink">
-            Reservar
-          </Link>
-        </li>
-        <li className="nav-li">
-          <Link to="/contacto" className="nlink">
-            Contacto
-          </Link>
-        </li>
+      <div className="nav-logo">
+        <img className="logo-circle" src="../../../public/logo.webp" alt="" />
+      </div>
+
+      <ul className="nav-menu">
+        <li><Link to="/reservar">Reservar</Link></li>
+        <li><Link to="/contacto">Contacto</Link></li>
+        <li><Link to="/login" className="auth-btn">Iniciar Sesión</Link></li>
+        <li><Link to="/register" className="auth-btn">Registrarse</Link></li>
       </ul>
     </nav>
   );
