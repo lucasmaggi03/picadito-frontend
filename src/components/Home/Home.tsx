@@ -9,7 +9,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export function Home() {
     
-
+    // GSAP SCROLL ANIMATION
     useGSAP( () => {
         gsap.fromTo('.reservar-box', {
             y: -200,
@@ -37,6 +37,9 @@ export function Home() {
         })
     })
     
+    // RESERVE FILTER
+    
+
     return (
         <>
             <div className="welcome">
