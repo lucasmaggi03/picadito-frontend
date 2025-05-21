@@ -2,7 +2,6 @@ import './Home.css';
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-
 import  gsap from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -109,7 +108,6 @@ export function Home() {
 
                 
             </div>
-
             <div className='reservar'>
                 <div className='reservar-box'>
                     <h1>RESERVA TU PARTIDO</h1>

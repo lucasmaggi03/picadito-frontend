@@ -1,23 +1,25 @@
 .nav-head {
   background-color: var(--secondary);
   width: 100%;
-  padding: 15px 30px;
+  padding: 0px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  border-radius: 5px;
 }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
+
+.logo {
+  width: 5rem;
+  height: 5rem;
+  transition:  0.3s ease-in-out; 
 }
 
-.logo-circle {
-  width: 70px;
-  height: 70px;
-  background-color: lightgray;
-  border-radius: 50%;
+.logo:hover {
+  cursor: pointer;
+  scale: 150%;
+  transition:  0.3s ease-in-out; 
 }
 
 .nav-menu {
@@ -28,12 +30,27 @@
   margin: 0;
 }
 
+
 .nav-menu a {
   text-decoration: none;
   background-color: var(--primary);
   padding: 15px 20px;
-  color: white;
+  color: var(--white);
   font-weight: 500;
-  box-shadow: 3px 3px #460222;
+  box-shadow: 3px 3px var(--shadow);
+  transition: 0.2s ease-in-out;
+  border-radius: 5px;
 }
 
+.nav-menu a:hover {
+  background-color: var(--accent);
+  box-shadow: 8px 8px var(--shadow);
+  transition: 0.2s ease-in-out;
+}
+
+.nav-menu-left{
+  display: flex;
+  gap: 20px;
+  object-position: center;
+  margin-right: 200px
+}

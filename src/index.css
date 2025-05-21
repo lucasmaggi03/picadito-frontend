@@ -10,9 +10,9 @@ html, body {
   background-color: var(--white);
   color: var(--white);
   overflow-y: inherit;
-  height: 100%;
   margin: 0;
   padding: 0;
+
   
 }
 
@@ -24,4 +24,5 @@ html, body {
   --white: #F3F4FC;
   --lightgray: #B3B3B3;
   --black: #03040A;
+  --shadow: #460222;
 }
