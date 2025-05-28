@@ -1,6 +1,7 @@
 import './Home.css';
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import  gsap from "gsap";
 import { useGSAP } from '@gsap/react';
@@ -109,6 +110,19 @@ export function Home() {
                 
             </div>
             <div className='reservar'>
+                <div className='home-nav'>
+                    <Link to="/"> <img className="logo" src="src\img\logo.png" alt="" /></Link>
+                <div className='home-nav-menu'>
+                    <ul className="nav-menu">
+                        <div className="nav-menu-left"> 
+                            <li><Link to="/reservar">Reservar</Link></li>
+                            <li><Link to="/contacto">Contacto</Link></li>
+                        </div>
+                            <li><Link to="/login" className="auth-btn">Iniciar Sesión</Link></li>
+                            <li><Link to="/register" className="auth-btn">Registrarse</Link></li>
+                    </ul>
+                </div>
+                </div>
                 <div className='reservar-box'>
                     <h1>RESERVA TU PARTIDO</h1>
 

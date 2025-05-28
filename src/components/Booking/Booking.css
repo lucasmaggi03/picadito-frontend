@@ -1,0 +1,66 @@
+
+.top-div {
+    color: var(--black);
+    text-align: center;
+
+}
+
+.top-div h1 {
+    margin-bottom: 0px;
+    font-size: 2.4rem;
+    font-weight: 800;
+    font-variant: small-caps;
+}
+
+.top-div h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+    margin: 0px;
+}
+
+.info-div {
+    color: var(--black);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.info-div h2{
+    
+    font-weight: 600;
+    margin: 0px 20px 0px 0px;
+    text-align: center;
+
+}
+
+.red, .green {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: var(--red-book);
+}
+
+.green {
+    background-color: var(--green-book);
+}
+
+.options { 
+    width: 75%;
+    margin: 2rem auto;
+}
+
+.options th{
+    background-color: red;
+}
+
+.columna {
+    background-color: blue;
+}
