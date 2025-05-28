@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import img from '../../img/logo2.webp';
 
 export function NavBar() {
   return (
     <nav className="nav-head">
       <div className="nav-logo">
-        <img className="logo-circle" src="../../../public/logo.webp" alt="" />
+        <img className="logo-circle" src={img} alt="" />
       </div>
 
       <ul className="nav-menu">

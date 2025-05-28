@@ -1,0 +1,124 @@
+.signin-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+.form-group.name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group.name > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  border-right: 1px solid var(--border);
+  background-color: rgba(51, 51, 51, 0.032);
+  overflow-y: auto;
+}
+
+.signin-card h1 {
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.signin-card p {
+  margin-bottom: 24px;
+  color: #6b7280;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #000;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+  font-size: 14px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--lightgray);
+}
+
+.form-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.forgot-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.signin-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: ease-in 0.2s;
+}
+
+.signin-btn:hover {
+  background-color: var(--primary);
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+.side-img {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-img img {
+  height: 400px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
