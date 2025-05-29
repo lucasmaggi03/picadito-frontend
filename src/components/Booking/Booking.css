@@ -1,3 +1,6 @@
+*{
+    background-color: black;
+}
 
 .top-div {
     color: var(--black);
@@ -62,5 +65,6 @@
 }
 
 .columna {
+    text-align: center;
     background-color: blue;
 }

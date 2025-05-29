@@ -1,16 +1,15 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom'
 import './Booking.css';
-
-type BookingProps = {
-    cancha: string;
-    ubicacion: string;
-};
+import { Complex } from '../../types';
 
 
-export function Booking( BookingProps: BookingProps ) {
-    const { cancha, ubicacion } = BookingProps;
-    const [canchaa,setCancha] = useState(cancha);
-    const [ubicaciona,setUbicacion] = useState(ubicacion);
+
+export function Booking( ) {
+    const location = useLocation()
+    const { complex } = location.state as { complex: Complex } || {};
+
+
 
 
     const times = ["13", '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']
@@ -27,7 +26,7 @@ export function Booking( BookingProps: BookingProps ) {
         <>
         <div className='top-div'>
             <h1 className=''>elegi un horario</h1>
-            <h4 className=''>{canchaa} - {ubicaciona}</h4>
+            <h4 className=''>{complex.name} - {complex.address}</h4>
         </div>
         <div className='info-div'>
             <div className='green'></div>
@@ -48,6 +47,7 @@ export function Booking( BookingProps: BookingProps ) {
             </thead>
             <tbody>
                 {options.map((option) => (
+
                     <tr key={option}>
                         <td className='columna'>{option}</td>
                         {times.map((time) => (

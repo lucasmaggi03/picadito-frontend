@@ -38,7 +38,7 @@ export function Complexes() {
         complexes.map((complex) => (
           <Link
             key={complex.idftb}
-            to="/reserve"
+            to="/reservar"
             state={{ complex }}
             className="complex-card"
           >
