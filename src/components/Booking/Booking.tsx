@@ -5,10 +5,11 @@ import { Complex } from '../../types';
 
 
 
+
+
 export function Booking( ) {
     const location = useLocation()
     const { complex } = location.state as { complex: Complex } || {};
-
 
 
 
