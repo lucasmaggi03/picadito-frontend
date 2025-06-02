@@ -12,20 +12,22 @@ export function Booking( ) {
 
 
 
-    const times = ["13", '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']
+    const times = ["13HS", '14HS', '15HS', '16HS', '17HS', '18HS', '19HS', '20HS', '2HS', '22HS', '23HS']
     const options = ['Cancha 1 Futbol 11', 'Cancha 2 Futbol 7', 'Cancha 3 Futbol 5', 'Cancha 4 Futbol 5']
 
-    const [selectedCell, setSelectedCell] = useState<{ day: string; time: string } | null>(null);
+    const [selectedCell, setSelectedCell] = useState<{ time: string; option: string } | null>(null);
 
-    const handleCellClick = (day: string, time: string) => {
-    setSelectedCell({ day, time });
-    console.log(`Día seleccionado: ${day}, Horario seleccionado: ${time}`);
+    const handleCellClick = (time: string, option: string) => {
+    setSelectedCell({ option, time });
+    
+    console.log(`cancha seleccionado: ${option}, Horario seleccionado: ${time}`);
+    console.log(selectedCell?.time)
   };
 
     return(
         <>
         <div className='top-div'>
-            <h1 className=''>elegi un horario</h1>
+            <h1 className=''>elige un horario</h1>
             <h4 className=''>{complex.name} - {complex.address}</h4>
         </div>
         <div className='info-div'>
@@ -49,12 +51,12 @@ export function Booking( ) {
                 {options.map((option) => (
 
                     <tr key={option}>
-                        <td className='columna'>{option}</td>
+                        <td className='columns'>{option}</td>
                         {times.map((time) => (
                             <td
                             key={`${option}-${time}`}
-                            onClick={() => handleCellClick(option,time)}
-                            className={selectedCell?.time === time && selectedCell?.option === option ? "selected" : ""}></td>
+                            onClick={() => handleCellClick(time,option)}
+                            className={selectedCell?.time === time && selectedCell?.option === option ? "selected-cell" : ""}></td>
                         ))}
                     </tr>
                 ))}
